@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>VueJS</title>
+  <link rel="stylesheet" href="CSS/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS/styles.css">
+  <script src="JS/vue.js"></script>
+</head>
+<body>
+<div class="wrapper">
+  <form class="form">
+    <div class="block">
+      <label for="email">Email</label>
+      <input type="email" class="input" id="email" placeholder="Введите свой email">
+    </div>
+    <div class="block">
+      <label for="firstName">First name</label>
+      <input type="text" class="input" id="firstName" placeholder="Введите свое имя">
+    </div>
+    <div class="block">
+      <label for="lastName">Last name</label>
+      <input type="text" class="input" id="lastName" placeholder="Введите свою фамилию">
+    </div>
+    <div class="block">
+      <label for="phone">Phone</label>
+      <input type="phone" class="input" id="phone" placeholder="Введите свой телефон">
+    </div>
+    <div class="block block-guests">
+      <label for="phone">Guests</label>
+      <button class="btn btn-primary">+</button>
+    </div>
+  </form>
+  <button class="btn btn-success">Send Data</button>
+</div>
+<script src="JS/scripts.js"></script>
+</body>
+</html>
