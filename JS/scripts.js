@@ -1,13 +1,34 @@
-let sample = new Vue({
-  el: '.sample',
+/*let app = new Vue({
+  el: '.wrapper',
   data: {
-    firstName: '',
-    lastName: '',
-    showText: false
+    firstName: 'Привет, вью!'
   },
   methods: {
-    fullName() {
-      return this.firstName + ' ' + this.lastName;
+    addInput: function addNewInput() {
+                  let newInput = document.createElement("input");
+                      newInput.type = 'text';
+                      newInput.placeholder = 'Фамилия Имя Отчество';
+                      newInput.classList.add('input');
+
+                  let blockGuests = document.querySelector('.add-guests');
+                      blockGuests.appendChild(newInput);
     }
   }
+});*/
+
+let button = document.querySelector('.btn-primary');
+let blockGuests = document.querySelector('.add-guests');
+button.addEventListener('click', function (e) {
+  e.preventDefault();
+  let newInput = document.createElement("input");
+  blockGuests.appendChild(newInput);
+  newInput.type = 'text';
+  newInput.placeholder = 'Фамилия Имя Отчество';
+  newInput.classList.add('input', 'newInput');
+
 });
+
+
+
+
+

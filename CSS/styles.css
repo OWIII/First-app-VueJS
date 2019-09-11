@@ -1,6 +1,7 @@
 .wrapper {
   margin: 0 auto;
   width: 30%;
+  min-width: 280px;
 }
 
 .form {
@@ -32,6 +33,11 @@
 
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.newInput {
+  display: block;
+  margin-top: 30px;
 }
 
 label {

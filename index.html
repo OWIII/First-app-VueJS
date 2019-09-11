@@ -12,6 +12,7 @@
 </head>
 <body>
 <div class="wrapper">
+
   <form class="form">
     <div class="block">
       <label for="email">Email</label>
@@ -31,8 +32,9 @@
     </div>
     <div class="block block-guests">
       <label for="phone">Guests</label>
-      <button class="btn btn-primary">+</button>
+      <button v-on:click="addInput" class="btn btn-primary">+</button>
     </div>
+    <div class="add-guests"></div>
   </form>
   <button class="btn btn-success">Send Data</button>
 </div>
