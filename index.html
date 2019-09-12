@@ -12,31 +12,66 @@
 </head>
 <body>
 <div class="wrapper">
-
-  <form class="form">
-    <div class="block">
-      <label for="email">Email</label>
-      <input type="email" class="input" id="email" placeholder="Введите свой email">
-    </div>
-    <div class="block">
-      <label for="firstName">First name</label>
-      <input type="text" class="input" id="firstName" placeholder="Введите свое имя">
-    </div>
-    <div class="block">
-      <label for="lastName">Last name</label>
-      <input type="text" class="input" id="lastName" placeholder="Введите свою фамилию">
-    </div>
-    <div class="block">
-      <label for="phone">Phone</label>
-      <input type="phone" class="input" id="phone" placeholder="Введите свой телефон">
-    </div>
-    <div class="block block-guests">
-      <label for="phone">Guests</label>
-      <button v-on:click="addInput" class="btn btn-primary">+</button>
-    </div>
-    <div class="add-guests"></div>
-  </form>
-  <button class="btn btn-success">Send Data</button>
+  <div class="main">
+    <form class="form">
+      <div class="block">
+        <label>Email</label>
+        <input type="email" class="input" v-model="email">
+      </div>
+      <div class="block">
+        <label>First name</label>
+        <input type="text" class="input" v-model="firstName">
+      </div>
+      <div class="block">
+        <label>Last name</label>
+        <input type="text" class="input" v-model="lastName">
+      </div>
+      <div class="block">
+        <label>Phone</label>
+        <input type="phone" class="input" v-model="phone">
+      </div>
+      <div class="block block-guests">
+        <label>Guests</label>
+        <button class="btn btn-primary" @click="addGuest">+</button>
+      </div>
+      <div class="block add-guests" v-for="(guest, index) in guests">
+        <label @click="deleteGuest(index)">Guest {{ index + 1 }}</label>
+        <input type="text" class="input" placeholder="Гость" v-model="guests[index]">
+      </div>
+    </form>
+    <button class="btn btn-success">Send Data</button>
+  </div>
+  <div class="done">
+    <h1>All done</h1>
+    <table class="table table-bordered">
+      <tr>
+        <td class="first-column">Email</td>
+        <td class="second-column">{{ email }}</td>
+      </tr>
+      <tr>
+        <td class="first-column">First name</td>
+        <td class="second-column">{{ firstName }}</td>
+      </tr>
+      <tr>
+        <td class="first-column">Last name</td>
+        <td class="second-column">{{ lastName }}</td>
+      </tr>
+      <tr>
+        <td class="first-column">Phone</td>
+        <td class="second-column">{{ phone }}</td>
+      </tr>
+      <tr>
+        <td class="first-column">Guests</td>
+        <td class="second-column">
+          <ul class="list-group">
+            <li class="list-group-item" v-for="(guest, index) in guests">
+              {{ guest }}
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>
 <script src="JS/scripts.js"></script>
 </body>
