@@ -12,8 +12,7 @@
 </head>
 <body>
 <div class="wrapper">
-  <div class="main">
-    <form class="form">
+    <form class="form" v-if="!formSubmited" @submit.prevent="formSubmited = true">
       <div class="block">
         <label>Email</label>
         <input type="email" class="input" v-model="email">
@@ -32,17 +31,16 @@
       </div>
       <div class="block block-guests">
         <label>Guests</label>
-        <button class="btn btn-primary" @click="addGuest">+</button>
+        <button class="btn btn-primary" type="button" @click.prevent="addGuest">+</button>
       </div>
       <div class="block add-guests" v-for="(guest, index) in guests">
         <label @click="deleteGuest(index)">Guest {{ index + 1 }}</label>
         <input type="text" class="input" placeholder="Гость" v-model="guests[index]">
       </div>
+      <input type="submit" value="Send Data" class="btn btn-success"></input>
     </form>
-    <button class="btn btn-success">Send Data</button>
-  </div>
-  <div class="done">
-    <h1>All done</h1>
+  <div class="done" v-else>
+    <h1>All done!</h1>
     <table class="table table-bordered">
       <tr>
         <td class="first-column">Email</td>

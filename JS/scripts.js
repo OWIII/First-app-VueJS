@@ -1,6 +1,7 @@
 let app = new Vue({
   el: '.wrapper',
   data: {
+    formSubmited: false,
     email: ' ',
     firstName: ' ',
     lastName: ' ',
