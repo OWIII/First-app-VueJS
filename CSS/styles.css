@@ -73,3 +73,12 @@ label {
 .second-column {
   word-wrap: break-word;
 }
+
+@media (max-width: 425px) {
+  .form {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+
+  }
+}
